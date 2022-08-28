@@ -1,9 +1,5 @@
 puts "Seeding the Lightning Cards database"
 
-
-
-####################################
-
 print "Creating cards..."
 
 Card.destroy_all
@@ -47,7 +43,36 @@ d3 = Deck.create! name: 'JavaScript'
 puts "Done! Created #{Deck.count} decks"
 print Deck.pluck :name
 
-# add cards to decks
-
+# add cards to the decks
 d1.cards << c1 # spanish
 d2.cards << c2 << c3 # german
+
+
+# Test the associations 
+puts "Testing deck -< cards associations:"
+puts " • the card with front: #{Card.first.front_text} and back: #{Card.first.back_text} is in Deck: '#{Card.first.deck.name}'"
+puts " • the deck: '#{Deck.second.name}' contains the cards: #{Deck.second.cards.pluck(:front_text, :back_text).join(', ')}"
+
+######################################
+
+print "Creating users"
+
+User.destroy_all
+
+u1 = User.create! name: 'Max', email: 'max@fake.com' 
+u2 = User.create! name: 'Jane', email: 'jane@fake.com' 
+u3 = User.create! name: 'Fiona', email: 'fiona@fake.com' 
+
+puts "Created #{User.count} users"
+
+# add decks to users
+u1.decks << d1
+u2.decks << d2
+u3.decks << d3
+
+puts "User: #{u1.name} is studying decks #{u1.decks.pluck(:name).join(', ')}."
+puts "Deck: #{d1.name} belongs to #{ d1.user.name}"
+puts "User: #{u2.name} is studying decks #{u2.decks.pluck(:name).join(', ')}."
+puts "Deck: #{d2.name} belongs to #{ d2.user.name}"
+puts "User: #{u3.name} is studying decks #{u3.decks.pluck(:name).join(', ')}."
+puts "Deck: #{d3.name} belongs to #{ d3.user.name}"
