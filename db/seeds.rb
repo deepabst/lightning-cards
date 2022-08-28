@@ -1,4 +1,10 @@
-print "Creating lightning cards..."
+puts "Seeding the Lightning Cards database"
+
+
+
+####################################
+
+print "Creating cards..."
 
 Card.destroy_all
 
@@ -41,4 +47,7 @@ d3 = Deck.create! name: 'JavaScript'
 puts "Done! Created #{Deck.count} decks"
 print Deck.pluck :name
 
-################################
+# add cards to decks
+
+d1.cards << c1 # spanish
+d2.cards << c2 << c3 # german
