@@ -59,9 +59,9 @@ print "Creating users"
 
 User.destroy_all
 
-u1 = User.create! name: 'Max', email: 'max@fake.com' 
-u2 = User.create! name: 'Jane', email: 'jane@fake.com' 
-u3 = User.create! name: 'Fiona', email: 'fiona@fake.com' 
+u1 = User.create! name: 'Max', email: 'max@fake.com', password: 'chicken'
+u2 = User.create! name: 'Jane', email: 'jane@fake.com', password: 'chicken'
+u3 = User.create! name: 'Fiona', email: 'fiona@fake.com', password: 'chicken'
 
 puts "Created #{User.count} users"
 
