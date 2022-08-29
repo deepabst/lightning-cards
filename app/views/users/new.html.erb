@@ -1,0 +1,36 @@
+<h2>Create User Account</h2>
+
+<% if @user.errors.any? %>
+<strong>Something went wrong</strong>
+  <ul class="error_list">
+    <% @user.errors.full_messages.each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @user, local: true do |f| %>
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :email  %>
+  <br>
+  <%= f.text_field :email  %>
+  <br>
+  <br>
+  <%= f.label :password  %>
+  <br>
+  <%= f.password_field :password  %>
+  <br>
+  <br>
+  <%= f.label :password_confirmation  %>
+  <br>
+  <%= f.password_field :password_confirmation  %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>
