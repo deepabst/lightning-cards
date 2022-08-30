@@ -3,7 +3,7 @@
 <% if @current_user.present? && @current_user.id == @deck.user.id%>
 <%= link_to 'Rename', edit_deck_path(@deck.id) %>
 <%= link_to 'Delete Deck', deck_path(@deck.id), method: 'delete' %>
-TODO: Create card link here
+<%= link_to 'Add Card', new_card_path %>
 <% end %>
 
 <p>TODO: List associated cards here</p>
