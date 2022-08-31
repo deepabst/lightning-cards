@@ -22,6 +22,10 @@
         </td>
         <td>
           <%= link_to 'show',card_path(card.id)  %>
+          |
+          <%= link_to 'edit', edit_card_path(card.id) %>
+          |
+          <%= link_to 'delete', card_path(card.id), method: 'delete' %>
         </td>
       </tr>
     <% end %>

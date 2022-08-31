@@ -37,6 +37,7 @@ class CardsController < ApplicationController
 
   def destroy
     Card.destroy params[:id]
+    redirect_back(fallback_location: root_path)
   end
 
   private
