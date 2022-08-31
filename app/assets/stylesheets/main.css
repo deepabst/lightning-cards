@@ -1,8 +1,15 @@
+/* globally enable border box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 h1 {
     writing-mode: vertical-rl;
 }
 
-.field_with_errors input {
+.field_with_errors * {
     color: red;
     font-weight: 400;
     border: 2px solid red;

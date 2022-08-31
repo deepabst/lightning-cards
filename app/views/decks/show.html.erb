@@ -1,9 +1,31 @@
 <h2>Deck: <%= @deck.name %></h2>
-
 <% if @current_user.present? && @current_user.id == @deck.user.id%>
-<%= link_to 'Rename', edit_deck_path(@deck.id) %>
-<%= link_to 'Delete Deck', deck_path(@deck.id), method: 'delete' %>
-<%= link_to 'Add Card', new_card_path %>
+  <%= link_to 'Rename', edit_deck_path(@deck.id) %>
+  <%= link_to 'Delete Deck', deck_path(@deck.id), method: 'delete' %>
+  <%= link_to 'Add Card', new_card_path %>
 <% end %>
-
-<p>TODO: List associated cards here</p>
+<% if Card.where(deck_id: @deck.id).any?%>
+  <table>
+    <thead>
+      <tr>
+        <th>front</th>
+        <th>back</th>
+      </tr>
+    </thead>
+    <% Card.where(deck_id: @deck.id).each do |card| %>
+      <tr>
+        <td>
+          <%= card.front_text %>
+        </td>
+        <td>
+          <%= card.back_text %>
+        </td>
+        <td>
+          <%= link_to 'show',card_path(card.id)  %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>No cards in this deck yet.</p>
+<% end %>

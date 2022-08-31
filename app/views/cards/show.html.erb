@@ -1,2 +1,11 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<h2>Card Detail View</h2>
+<p>
+  Front: <%= @card.front_text  %>
+</p>
+<p>
+  Back: <%= @card.back_text  %>
+</p>
+<p>
+  Deck: <%= @card.deck.name %>
+</p>
+<%= link_to 'Edit', edit_card_path(@card.id) %>
