@@ -1,11 +1,10 @@
 class DecksController < ApplicationController
-
   before_action :check_if_logged_in
-  
+
   def new
     @deck = Deck.new
   end # new
-  
+
   def create
     # create a new deck with only a name
     @deck = Deck.new deck_params
@@ -19,7 +18,6 @@ class DecksController < ApplicationController
     else
       render :new
     end # if @deck persisted
-    
   end # create
 
   def index
@@ -30,7 +28,7 @@ class DecksController < ApplicationController
     @deck = Deck.find params[:id]
     # check the user owns this deck (might have guessed the url)
     if @deck.user_id != @current_user.id
-      flash[:error] = "Deck not found" 
+      flash[:error] = "Deck not found"
       redirect_to decks_path
     end
   end # show
@@ -39,15 +37,15 @@ class DecksController < ApplicationController
     # edit a deck name
     @deck = Deck.find params[:id]
     if @deck.user_id != @current_user.id
-      flash[:error] = "Deck not found" 
+      flash[:error] = "Deck not found"
       redirect_to decks_path
     end
   end
-  
+
   def update
     deck = Deck.find params[:id]
     if deck.user_id != @current_user.id
-      flash[:error] = "Deck not found" 
+      flash[:error] = "Deck not found"
       redirect_to decks_path
     else
       deck.update deck_params
@@ -60,11 +58,15 @@ class DecksController < ApplicationController
     @deck = Deck.find params[:id]
     # check the user owns this deck (might have guessed the url)
     if @deck.user_id != @current_user.id
-      flash[:error] = "Deck not found" 
+      flash[:error] = "Deck not found"
     else
       Deck.destroy params[:id]
     end
     redirect_to decks_path
+  end
+
+  def play
+    puts "LETS PLAYYYYYYYYYYYYYYYYY"
   end
 
   private
@@ -74,5 +76,5 @@ class DecksController < ApplicationController
   end
 
   # TODO: move check deck ownership code to a separate private method and run before anything else
-  
+
 end # class DecksController
