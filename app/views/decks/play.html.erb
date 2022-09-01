@@ -4,9 +4,10 @@
   <div class="front"><%= @card.front_text %></div>
   <div class="back flipped"><%= @card.back_text %></div>
 </div>
-<p> TODO: add links for wrong, flip, right </p>
-<%= link_to "Wrong!", confidence_path(id: @card.id, num: -1), method: :put %>
-<%= link_to "Right!", confidence_path(id: @card.id, num: +1), method: :put %>
+<div class="links">
+  <%= link_to "Wrong", confidence_path(id: @card.id, num: -1), method: :put %>
+  <%= link_to "Right", confidence_path(id: @card.id, num: +1), method: :put %>
+</div>
 <ol>How to play:
   <li>Look at the card</li>
   <li>Guess <em>aloud</em> what is on the other side</li>

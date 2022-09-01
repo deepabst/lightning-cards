@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat&display=swap');
+
 /* globally enable border box sizing */
 *,
 *::before,
@@ -5,9 +7,68 @@
   box-sizing: border-box;
 }
 
+body {
+    background-image: url('graph_paper.svg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+nav {
+    width: 20vw;
+    height: 95vh;
+    background-color: hsl(186, 83%, 50%);
+    display: inline-block;
+    vertical-align: top;
+    border-right: 2px dotted black;
+}
+
+nav a {
+    display: block;
+    padding: 0 10px;
+}
+
+nav img {
+    width: 100%;
+    padding: 5px;
+    border-bottom: 2px dotted;
+    border-top: 2px dotted;
+    border-radius: 4px;
+}
+
+footer {
+    height: 5vh;
+    vertical-align: bottom;
+    width: 100vw;
+    text-align: center;
+    background-color: hsla(0, 5%, 60%, 0.5);
+    border-top: 2px dashed hsl(0, 0%, 0%);
+}
+
+.container {
+    display: inline-block;
+    width: 70vw;
+    margin: 0 10px;
+}
+
 h1 {
     writing-mode: vertical-rl;
 }
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+h1,h2, p, a, ol, ul, li {
+    background-color: beige;
+} 
+
+.container a {
+    position: relative;
+}
+
 
 .field_with_errors * {
     color: red;
@@ -18,4 +79,12 @@ h1 {
 .error_list {
     color: red;
     list-style-type: square;
+}
+
+span.username {
+    font-family: 'Caveat', cursive;
+}
+
+.home{
+    margin-top: 10vh;
 }
