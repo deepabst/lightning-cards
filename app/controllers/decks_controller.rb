@@ -26,7 +26,7 @@ class DecksController < ApplicationController
 
   def show
     @deck = Deck.find params[:id]
-    # check the user owns this deck (might have guessed the url)
+    # check the user owns this deck (bad actor might have guessed the url)
     if @deck.user_id != @current_user.id
       flash[:error] = "Deck not found"
       redirect_to decks_path
@@ -71,6 +71,11 @@ class DecksController < ApplicationController
 
     #TODO: move this card selection logic into the Deck model.
     nextCard = nil
+    # as some confidence buckets may be empty
+    # iterate til there is a next card to show
+    # performance issue - more iterations
+    # as the user improves since there is only a
+    # 5% chance of seeing high confidence cards
     while nextCard == nil
       d100 = rand(1..100)
       case d100
@@ -86,8 +91,8 @@ class DecksController < ApplicationController
       else
         # select from confidence level 0
         nextCard = Card.where(deck_id: @deck.id).where(front_confidence: 0).sample
-      end
-    end
+      end # switch case
+    end # while loop
     @card = nextCard
     # randomly select another card in the deck
   end # play method

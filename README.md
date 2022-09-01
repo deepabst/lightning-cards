@@ -1,24 +1,47 @@
-# README
+# LIGHTNING FLASH CARDS
+>learn *anything* in a *flash*
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create your very own online set of flash cards
 
-Things you may want to cover:
+Live site: https://lightning-flash-cards.herokuapp.com/
 
-* Ruby version
+### FEATURES
+- signup/login/logout
+- create a custom deck of flash cards
+- play mode to study
+- flip card animation
+- user confidence tracking, see less confident cards more often
+- space bar/click to flip a card
+- right/left arrow keys to indicate right/wrong answers
 
-* System dependencies
+### TECH STACK
+- Ruby on Rails
+- ActiveRecord
+- Postgresql
+- Javascript
+- jQuery
+- HTML/CSS
+- Deployed on Heroku
 
-* Configuration
+### INSTALL LOCALLY
+1. $`rails db:migrate`
+1. $`rails db:seed`
+1. $`rails s`
+1. open localhost:3000 in browser
 
-* Database creation
+---
 
-* Database initialization
+[Link to Wireframes and User Stories](https://www.canva.com/design/DAFKgQackcU/oVsD_ee5a9D00DIHx9BTew/edit?utm_content=DAFKgQackcU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-* How to run the test suite
+### Known Issues
+- arrow key handler fires on all screens (not just play mode) causing js errors
+- performance issue in card randomiser when user increases in confidence  
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Roadmap / Wishlist
+- upload images to cards
+- upload user avatar
+- card animations for swipe left and and right
+- set study goal and timer
+- user stats and celebration 
+- track and report improvement in card confidence 
+- mobile friendly view - swipe controls
