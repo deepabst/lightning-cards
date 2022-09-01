@@ -68,6 +68,8 @@ class DecksController < ApplicationController
   def play
     @deck = Deck.find params[:id]
     # decide what confidence level card to show next 0,1,2,3
+
+    #TODO: move this card selection logic into the Deck model.
     nextCard = nil
     while nextCard == nil
       d100 = rand(1..100)

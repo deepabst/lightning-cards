@@ -2,7 +2,7 @@
 <% p @card%>
 <div class="card">
   <div class="front"><%= @card.front_text %></div>
-  <div class="back"><%= @card.back_text %></div>
+  <div class="back flipped"><%= @card.back_text %></div>
 </div>
 <p> TODO: add links for wrong, flip, right </p>
 <%= link_to "Wrong!", confidence_path(id: @card.id, num: -1), method: :put %>
@@ -14,3 +14,6 @@
   <li>right? - right arrow</li>
   <li>wrong? - left arrow</li>
 </ol>
+<script>
+  const cardId = <%= @card.id %>;
+</script>

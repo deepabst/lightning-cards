@@ -1,17 +1,18 @@
 <h2>Deck List</h2>
-
 <% if flash[:error] %>
   <br>
   <strong>
-  <%= flash[:error] %>
+    <%= flash[:error] %>
   </strong>
   <br>
 <% end %>
-
 <ul>
-<% @decks.each do |deck| %>
-<li>
-<%= link_to deck.name, deck_path(deck.id) %>
-</li>
-<% end %>
+  <% @decks.each do |deck| %>
+    <li>
+      <%= link_to deck.name, deck_path(deck.id) %>
+      <% if deck.cards.any?%>
+        <%= link_to 'play', play_path(deck.id) %>
+      <% end %>
+    </li>
+  <% end %>
 </ul>
