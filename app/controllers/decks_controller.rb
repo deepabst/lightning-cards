@@ -66,8 +66,29 @@ class DecksController < ApplicationController
   end
 
   def play
-    puts "LETS PLAYYYYYYYYYYYYYYYYY"
-  end
+    @deck = Deck.find params[:id]
+    # decide what confidence level card to show next 0,1,2,3
+    nextCard = nil
+    while nextCard == nil
+      d100 = rand(1..100)
+      case d100
+      when 95..100
+        # select from confidence level 3
+        nextCard = Card.where(deck_id: @deck.id).where(front_confidence: 3).sample
+      when 81..95
+        # select from confidence level 2
+        nextCard = Card.where(deck_id: @deck.id).where(front_confidence: 2).sample
+      when 51..80
+        # select from confidence level 1
+        nextCard = Card.where(deck_id: @deck.id).where(front_confidence: 1).sample
+      else
+        # select from confidence level 0
+        nextCard = Card.where(deck_id: @deck.id).where(front_confidence: 0).sample
+      end
+    end
+    @card = nextCard
+    # randomly select another card in the deck
+  end # play method
 
   private
 
