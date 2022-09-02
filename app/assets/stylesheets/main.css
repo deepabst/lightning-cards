@@ -88,3 +88,13 @@ span.username {
 .home{
     margin-top: 10vh;
 }
+
+#navtoggle {
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+    border: none;
+    font-size: 0.5rem;
+}

@@ -1,4 +1,4 @@
-.card {
+.card, .displaycard{
     width: 90%;
     height: 200px;
     margin: 0 auto 20px;
@@ -8,7 +8,7 @@
     max-width: 400px;
 }
 
-.card div {
+.card div, .displaycard div {
     position: absolute;
     height: 100%;
     width: 100%;

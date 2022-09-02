@@ -15,9 +15,6 @@ class CardsController < ApplicationController
     end # if
   end # create
 
-  def index
-  end
-
   def show
     @card = Card.find params[:id]
     if @card.deck.user_id != @current_user.id

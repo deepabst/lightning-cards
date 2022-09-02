@@ -3,7 +3,6 @@ class SessionController < ApplicationController
   end
 
   def create
-    # raise 'hell'
 
     # 1. check email address is in the db
     user = User.find_by email: params[:email]

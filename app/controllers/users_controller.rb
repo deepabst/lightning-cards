@@ -9,25 +9,20 @@ class UsersController < ApplicationController
     # did user creation succeed?
     if @user.persisted?
       session[:user_id] = @user.id # login
-      redirect_to user_path(@user.id)
+      redirect_to new_deck_path
     else
-      # by using the same variable as we expect in the new template
+      # by using the same variable as the new template
       # i.e. '@user'
       # the form populates the entered
       # data and adds 'div.field-with-errors'
       # where field requirements aren't met
-      # re-render the new template 
+      # re-render the new template
       render :new
-      
     end # if user create worked
-    
   end # create
 
   def index
   end # index
-
-  def show
-  end # show
 
   def edit
   end # edit
@@ -43,6 +38,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end # user_params
-  
-  
 end # class UserController

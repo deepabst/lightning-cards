@@ -1,7 +1,10 @@
 # LIGHTNING FLASH CARDS
 >learn *anything* in a *flash*
 
-Create your very own online set of flash cards
+Create a set of flash cards
+on any topic
+and drill them to commit content to
+long term memory
 
 Live site: https://lightning-flash-cards.herokuapp.com/
 

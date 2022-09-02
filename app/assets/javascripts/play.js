@@ -11,12 +11,16 @@ $('html').on('keyup', function (e) {
     if (e.code == 'ArrowLeft') {
         // got it wrong
         console.log("toss the card to the left")
-        window.location = `/cards/${cardId}/confidence/-1`;
+        if (typeof cardId !== 'undefined') {
+            window.location = `/cards/${cardId}/confidence/-1`;
+        }
     }
     if (e.code == 'ArrowRight') {
         // got it right
         console.log("toss the card to the right")
-        window.location = `/cards/${cardId}/confidence/1`;
+        if (typeof cardId !== 'undefined') {
+            window.location = `/cards/${cardId}/confidence/1`;
+        }
     }
     if (e.code == 'Escape') {
         // ESC
@@ -24,8 +28,8 @@ $('html').on('keyup', function (e) {
     }
 });
 
-$(document).ready(function(){
-    $('.card').on('click',function(e){
+$(document).ready(function () {
+    $('.card').on('click', function (e) {
         $('.front').toggleClass('flipped');
         $('.back').toggleClass('flipped');
     });
