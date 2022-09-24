@@ -6,16 +6,25 @@ on any topic
 and drill them to commit content to
 long term memory
 
-Live site: https://lightning-flash-cards.herokuapp.com/
+[Live site](https://lightning-flash-cards.herokuapp.com/)
+
+### TEST USERS
+login: `max@fake.com`, password: `chicken`
+login: `jane@fake.com`, password: `chicken`
+login: `fiona@fake.com`, password: `chicken`
+
+### BACKGROUND
+This is the second project I made as part of the Software Engineer Immersive course at General Assembly Sydney.
+I spent two weeks learning Ruby on Rails and this project was to demonstrate the knowledge I have retained.
 
 ### FEATURES
-- signup/login/logout
-- create a custom deck of flash cards
-- play mode to study
-- flip card animation
-- user confidence tracking, see less confident cards more often
-- space bar/click to flip a card
-- right/left arrow keys to indicate right/wrong answers
+- Randomised order of cards in Play mode
+- Signup/login/logout
+- Custom deck of flash cards
+- Flip card animation
+- User confidence tracking, see less confident cards more often
+- Space bar/click to flip a card
+- Right/left arrow keys to indicate right/wrong answers
 
 ### TECH STACK
 - Ruby on Rails
@@ -23,7 +32,6 @@ Live site: https://lightning-flash-cards.herokuapp.com/
 - Postgresql
 - Javascript
 - jQuery
-- HTML/CSS
 - Deployed on Heroku
 
 ### INSTALL LOCALLY
@@ -33,8 +41,14 @@ Live site: https://lightning-flash-cards.herokuapp.com/
 1. open localhost:3000 in browser
 
 ---
+### USER STORIES
+![User Stories](app/assets/images/user_stories.png)
 
-[Link to Wireframes and User Stories](https://www.canva.com/design/DAFKgQackcU/oVsD_ee5a9D00DIHx9BTew/edit?utm_content=DAFKgQackcU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+### WIREFRAMES
+![Wireframes](app/assets/images/wireframes.png)
+
+### DATA STRUCTURE
+![Data Structure](app/assets/images/data_structure.png)
 
 ### Known Issues
 - arrow key handler fires on all screens (not just play mode) causing js errors

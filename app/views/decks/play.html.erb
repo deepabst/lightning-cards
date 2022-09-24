@@ -5,8 +5,12 @@
   <div class="back flipped"><%= @card.back_text %></div>
 </div>
 <div class="links">
+  <button id="wrong">Got it wrong</button>
+  <button id="right">Got it right</button>
+  <!--
   <%= link_to "Wrong", confidence_path(id: @card.id, num: -1), method: :put %>
   <%= link_to "Right", confidence_path(id: @card.id, num: +1), method: :put %>
+-->
 </div>
 <ol>How to play:
   <li>Look at the card</li>
@@ -16,5 +20,5 @@
   <li>wrong? - left arrow</li>
 </ol>
 <script>
-  const cardId = <%= @card.id %>;
+  const cardId = <%= @card.id %>; //hack to hand the card-id to the left and right arrows
 </script>
