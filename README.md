@@ -1,4 +1,5 @@
 # LIGHTNING FLASH CARDS
+[![Deploy](https://github.com/deepabst/lightning-cards/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/deepabst/lightning-cards/actions/workflows/main.yml)
 >learn *anything* in a *flash*
 
 Create a set of flash cards
