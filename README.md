@@ -32,6 +32,7 @@ I spent two weeks learning Ruby on Rails and this project was to demonstrate the
 - Postgresql
 - Javascript
 - jQuery
+- RSpec tests
 - Deployed on Heroku
 
 ### INSTALL LOCALLY
@@ -39,6 +40,9 @@ I spent two weeks learning Ruby on Rails and this project was to demonstrate the
 1. $`rails db:seed`
 1. $`rails s`
 1. open localhost:3000 in browser
+
+### TEST LOCALLY
+1. $`rspec`
 
 ---
 ### USER STORIES
